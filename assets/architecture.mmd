@@ -1,0 +1,13 @@
+flowchart LR
+  A[User (Recruiter) via Streamlit UI] --> B{Upload}
+  B --> |Job Description (text/file)| C[JD Preprocessor]
+  B --> |Resumes (PDF/DOCX/TXT)| D[Resume Parser]
+  C --> E[Embedder (OpenAI Embeddings)]
+  D --> E
+  E --> F[Ranking Module (cosine similarity)]
+  F --> G[Explainability Module (keywords & highlights)]
+  G --> H[Streamlit Results (Ranked list, CSV export)]
+  subgraph Optional
+    E --> I[Vector DB (FAISS / Chroma / Pinecone)]
+    G --> J[LLM (GPT) for natural language explanations]
+  end
