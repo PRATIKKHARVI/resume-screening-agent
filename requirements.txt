@@ -9,3 +9,4 @@ nltk>=3.8
 python-magic>=0.4.27
 tqdm>=4.65.0
 google-generativeai
+python-dotenv
